@@ -11,10 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor, NgIf } from '@angular/common';
 import { NgbCarouselConfig,NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { ThreeJsComponent } from './three-js/three-js.component';
+import { FooterMainComponent } from './footer-main/footer-main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ThreeJsComponent,
+    FooterMainComponent,
 
   ],
 
