@@ -13,18 +13,32 @@ import { NgFor, NgIf } from '@angular/common';
 import { NgbCarouselConfig,NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { ThreeJsComponent } from './three-js/three-js.component';
 import { FooterMainComponent } from './footer-main/footer-main.component';
+import { OurTeamComponent } from './our-team/our-team.component';
+import { CategoryCarouselComponent } from './category-carousel/category-carousel.component';
+import { HomeComponent } from './home/home.component';
+import { ResearchesComponent } from './researches/researches.component';
+import { ResearchesDataComponent } from './researches-data/researches-data.component';
+import { ResearchItemDetailsComponent } from './research-item-details/research-item-details.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ThreeJsComponent,
     FooterMainComponent,
+    OurTeamComponent,
+    HomeComponent,
+    ResearchesComponent,
+ 
+
+    
 
   ],
 
   imports: [
-    BrowserModule,
-    AppRoutingModule,NgbModule,NgbAlert,
+    BrowserModule,   ResearchItemDetailsComponent,
+    AppRoutingModule,NgbModule,NgbAlert, CategoryCarouselComponent,ResearchesDataComponent,
     NavbarCompComponent,CarouselCompComponent,NgbPaginationModule, NgbAlertModule,BrowserAnimationsModule,NgbCarouselModule, NgIf, NgFor
   ],
   providers: [NgbCarouselConfig],

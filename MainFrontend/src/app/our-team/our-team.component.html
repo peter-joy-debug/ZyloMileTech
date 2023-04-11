@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-sm-4" *ngFor="let teamMember of teamMembers">
+        <!-- <ngb-card>
+            <img class="card-img-top" src="{{ teamMember.photo }}" alt="{{ teamMember.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ teamMember.name }}</h5>
+              <p class="card-text">{{ teamMember.role }}</p>
+            </div>
+          </ngb-card> -->
+
+          <div class="card" style="width: 18rem;">
+            <img src="{{ teamMember.photo }}" class="card-img-top" alt="{{ teamMember.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ teamMember.name }}</h5>
+              <p class="card-text">{{ teamMember.role }}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+  </div>

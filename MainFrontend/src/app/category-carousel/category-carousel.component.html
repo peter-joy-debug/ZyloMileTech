@@ -1,0 +1,63 @@
+<div class="row" style="background-color: rgb(66, 66, 66);border-radius: 20px;">
+<ngb-carousel
+*ngIf="images"
+[showNavigationArrows]="showNavigationArrows"
+[showNavigationIndicators]="showNavigationIndicators"
+>
+<ng-template ngbSlide *ngFor="let image of images">
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('{{image.src}}');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <p class="pt-5 mt-5 mb-3 display-6 lh-1 fw-bold" style="font-size: 32px;">{{image.title}}</p>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img [src]="image.src" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                <!-- <small>Earth</small> -->
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                <!-- <small>3d</small> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <br>
+        <div class="container">
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="" style="color: aliceblue;">{{image.short}}</h5>
+                </div>      
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-outline-light btn-lg px-4">View More </button>
+                </div>      
+            </div>
+
+        </div>
+
+    </div>
+</div>
+    
+
+
+
+  <!-- <div>
+    <img [src]="image.src" alt="Random first slide" >
+  </div>
+  <div class="carousel-caption">
+    <h3>{{ image.title }}</h3>
+    <p>{{ image.short }}</p>
+  </div> -->
+</ng-template>
+</ngb-carousel>
+</div>

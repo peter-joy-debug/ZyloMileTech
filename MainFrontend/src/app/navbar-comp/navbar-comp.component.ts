@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-navbar-comp',
   templateUrl: './navbar-comp.component.html',
   standalone: true,
-	imports: [NgbCollapseModule, RouterLink],
+	imports: [NgbCollapseModule, RouterLink,],
   styleUrls: ['./navbar-comp.component.css']
 })
 export class NavbarCompComponent {

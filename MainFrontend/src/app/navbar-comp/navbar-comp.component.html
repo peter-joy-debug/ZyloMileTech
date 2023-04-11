@@ -8,19 +8,23 @@
 
 		<!-- Step 2: Add the ngbCollapse directive to the element below. -->
 		<div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+			
 			<ul class="navbar-nav nav-pills d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
 				<li class="nav-item active">
 					<!-- Step 4: Close the menu when a link is clicked. -->
-					<a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
+					<a class="nav-link" href="#home" routerLink="" (click)="isMenuCollapsed = true">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About Us</a>
+					<a class="nav-link" routerLink="/researches" (click)="isMenuCollapsed = true">Researches</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Projects</a>
+					<a class="nav-link" routerLink=""  (click)="isMenuCollapsed = true">Projects Ideas</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink=""  (click)="isMenuCollapsed = true">Our Blog</a>
 				</li>
                 <li class="nav-item">
-					<a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Contact Us</a>
+					<a class="nav-link" routerLink=""  (click)="isMenuCollapsed = true">Contact Us</a>
 				</li>
 			</ul>
             <ul class="navbar-nav ms-auto">

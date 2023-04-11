@@ -27,7 +27,7 @@ export class CarouselCompComponent  {
 		// customize default values of carousels used by this component tree
 		config.showNavigationArrows = false;
 		config.showNavigationIndicators = false;
-    config.interval = 2000;
+    config.interval = 9000;
     config.keyboard = true;
     config.pauseOnHover = true;
 	}
