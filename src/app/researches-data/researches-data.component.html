@@ -1,0 +1,253 @@
+
+
+<form>
+
+    <div class="col-md-12">
+    
+            <div class="container sticky-sm-top" >
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-2 align-items-center rounded-4 border shadow-lg">
+        
+              <div class="col-lg-7 offset-lg-1 p-2 overflow-hidden ">
+                <!-- <div class="mb-3 row">
+                   
+                </div> -->
+               
+                <!-- <div class="col-xs-3 col-sm-auto"> -->
+                    <div class="row sticky-sm-top">
+                        <div class="col-sm-3">
+                            <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label" style="background-color: rgb(40, 124, 248);color: aliceblue;border-radius: 30px;padding: 7px 7px;margin-bottom: 5px;"><i class="bi bi-search"></i> Search Here</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input
+                            id="table-complete-search"
+                            type="text"
+                            class="form-control "
+                            name="searchTerm"
+                            [(ngModel)]="service.searchTerm"
+                            style="outline: 2px solid rgb(180, 180, 180);"
+                        />
+                        </div>
+                        <div class="col-sm-3">
+                            <span class="col col-form-label" *ngIf="service.loading$ | async">
+                                <div class="spinner-border" role="status" style="color: grey;">
+                                    <span class="visually-hidden">Loading...</span>
+                                  </div>
+                            </span>
+                        </div>
+                    </div>
+          
+                <!-- </div> -->
+             
+              </div>
+        
+              <div class="col-lg-4 p-3 p-lg-4 pt-lg-4">
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-4">
+                  <button 
+                  type="button" 
+                  class="btn btn-primary btn-md px-4 me-md-2"
+                  type="button"
+                  (click)="isCollapsed = ! isCollapsed"
+                  [attr.aria-expanded]="!isCollapsed"
+                  aria-controls="collapseExample"
+
+                  >
+                  <i class="bi bi-filter"></i> Advanced Filter</button>
+        
+                </div>
+              </div>
+
+              <div class="container">
+              <div class="row">
+                <div class="col-sm-12">
+        
+                        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                  
+                                    <p>Filter Options</p> 
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p style="font-size: 12px;"><i class="bi bi-flag"></i> Filter By Countries</p>
+                                            <hr>
+                                            <div class="form-check" *ngFor="let country of countries$ | async">
+                                                <input type="checkbox" class="form-check-input" id="{{country.id}}" 
+                                                />
+                                                <label class="form-check-label" for="dropdownCheck">
+                                                    <img
+                                                    [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag"
+                                                    class="me-2"
+                                                    style="width: 20px"
+                                                    />
+                                                 {{country.name}}</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p style="font-size: 12px;"><i class="bi bi-time"></i> Filter By Research Status</p>
+                                            <hr>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> Ongoing</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> Recruiting</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> Under-review</label>
+                                            </div>
+
+
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> Completed</label>
+                                            </div>
+
+
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> Published</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p style="font-size: 12px;"><i class="bi bi-point"></i> Filter By Date</p>
+                                            <hr>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> Today</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> After 1 - 5 Years</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> After 1 - 10 Years</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> After 1 - 20 Years</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <p style="font-size: 12px;"><i class="bi bi-point"></i> Filter By Category</p>
+                                            <hr>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> Software Engineering</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> Data Science</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> Artificial Intelligence</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+                                                <label class="form-check-label" for="dropdownCheck"> Cybersecurity</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+    
+               
+                </div>
+        
+              </div>
+            </div>
+
+
+            </div>
+          </div>
+        
+    </div>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <app-researches-data></app-researches-data> -->
+        </div>
+      </div>
+    </div>
+
+
+
+
+	<!-- <table class="table table-striped"> -->
+		<!-- <thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col" sortable="name" (sort)="onSort($event)">Country</th>
+				<th scope="col" sortable="area" (sort)="onSort($event)">Area</th>
+				<th scope="col" sortable="population" (sort)="onSort($event)">Population</th>
+			</tr>
+		</thead> -->
+
+
+
+		<!-- <tbody> -->
+			<!-- <tr *ngFor="let country of countries$ | async">
+				<th scope="row">{{ country.id }}</th>
+				<td>
+					<img
+						[src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag"
+						class="me-2"
+						style="width: 20px"
+					/>
+					<ngb-highlight [result]="country.name" [term]="service.searchTerm"></ngb-highlight>
+				</td>
+				<td><ngb-highlight [result]="country.area | number" [term]="service.searchTerm"></ngb-highlight></td>
+				<td><ngb-highlight [result]="country.population | number" [term]="service.searchTerm"></ngb-highlight></td>
+			</tr> -->
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let country of countries$ | async" style="margin: 10px;">
+                        <div class="card shadow-sm" style="width: 18rem;">
+                            <img [src]="country.cover_pic" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{country.title}}</h5>
+                              <p class="card-text">{{country.short_desc}}</p>
+                              <hr>
+                              <p class="card-text" style="font-size: 12px;">Published by: {{country.owner}}</p>
+                              <a class="btn btn-primary" routerLink="item-details/{{country.id}}">Explore</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+
+		<!-- </tbody> -->
+	<!-- </table> -->
+<br>
+	<div class="d-flex justify-content-between p-5 shadow-lg" style="background-color: rgb(173, 173, 173);">
+		<ngb-pagination [collectionSize]="(total$ | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+		</ngb-pagination>
+
+		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+            <option [ngValue]="10" [defaultSelected]>10 items per page</option>
+			<option [ngValue]="20">20 items per page</option>
+			<option [ngValue]="30">30 items per page</option>
+			<option [ngValue]="40">40 items per page</option>
+            <option [ngValue]="50">50 items per page</option>
+		</select>
+	</div>
+</form>

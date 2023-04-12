@@ -1,0 +1,112 @@
+<div class="container-fluid" style="background-color: rgba(233, 233, 233, 0.336);">
+    <div class="container my-1">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+          <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <h1 class="display-8 fw-bold lh-1">{{ item.title }}</h1>
+            <p class="lead">{{ item.short_desc }}</p>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p class="lead" style="font-size:small;background-color: rgb(71, 71, 71);color: aliceblue;padding: 5px;border-radius: 20px;">Published by: <b>{{ item.owner }}</b></p>
+                </div>
+                <div class="col-sm-4">
+                    <p class="lead" style="font-size:small;background-color: rgb(71, 71, 71);color: aliceblue;padding: 5px;border-radius: 20px;">Category: <b>{{ item.category }}</b></p>
+                </div>
+                <div class="col-sm-4">
+                    <p class="lead" style="font-size:small;background-color: rgb(71, 71, 71);color: aliceblue;padding: 5px;border-radius: 20px;">Status: <b>{{ item.status }}</b></p>
+                </div>
+            </div>
+            <hr>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+              <button type="button" class="btn btn-primary btn-md px-4 me-md-2 fw-bold">Join this research</button>
+              <button type="button" class="btn btn-outline-secondary btn-md px-4">Default</button>
+            </div>
+          </div>
+          <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+              <img class="rounded-lg-3" src="{{item.cover_pic}}" alt="" width="500">
+          </div>
+        </div>
+      </div>
+</div>
+<br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" style="height: 500px;">
+           
+            <ngb-carousel
+            [showNavigationArrows]="showNavigationArrows"
+            [showNavigationIndicators]="showNavigationIndicators"
+        >
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img src={{item.supporting_pic_2}} alt="Random slide" />
+                </div>
+                <div class="carousel-caption">
+                    <!-- <h3>No mouse navigation</h3> -->
+                    <!-- <p>This carousel hides navigation arrows and indicators.</p> -->
+                </div>
+            </ng-template>
+
+            <!-- <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img src={{item.supporting_pic_3}} alt="Random slide" />
+                </div>
+                <div class="carousel-caption">
+                    <h3>No mouse navigation</h3> -->
+                    <!-- <p>This carousel hides navigation arrows and indicators.</p> 
+                </div>
+            </ng-template> -->
+
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img src={{item.supporting_pic_2}} alt="Random slide" />
+                </div>
+                <!-- <div class="carousel-caption">
+                    <h3>No mouse navigation</h3>
+                    <p>This carousel hides navigation arrows and indicators.</p>
+                </div> -->
+            </ng-template>
+
+        </ngb-carousel>
+        
+
+        
+        <!-- <div class="btn-group" role="group" aria-label="Carousel toggle controls">
+            <button type="button" (click)="showNavigationArrows = !showNavigationArrows" class="btn btn-outline-dark btn-sm">
+                Toggle navigation arrows
+            </button>
+            <button
+                type="button"
+                (click)="showNavigationIndicators = !showNavigationIndicators"
+                class="btn btn-outline-dark btn-sm"
+            >
+                Toggle navigation indicators
+            </button>
+        </div> -->
+
+
+        </div>
+        <div class="col-sm-6">
+            <p class="lead" style="font-size: 30px;"><b>About our research</b></p>
+            <p class="lead" style="text-align: justify;">
+                {{item.big_desc}}
+            </p>
+        </div>
+    </div>
+<br><br>
+    <div class="row">
+        <div class="col-sm-6">
+            <p class="lead" style="font-size: 30px;"><b>Our current Stage</b></p>
+            <p class="lead" style="text-align: justify;">
+                {{item.short_desc}}
+                <br>
+                {{item.big_desc}}
+            </p>
+        </div>
+
+        <div class="col-sm-6">
+            <br>
+            <img src="{{item.supporting_pic_1}}" alt="" width=98% height=auto>
+        </div>
+    </div>
+</div>
