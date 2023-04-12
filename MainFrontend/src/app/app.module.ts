@@ -19,6 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { ResearchesComponent } from './researches/researches.component';
 import { ResearchesDataComponent } from './researches-data/researches-data.component';
 import { ResearchItemDetailsComponent } from './research-item-details/research-item-details.component';
+import { LoginComponent } from './login/login.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 
@@ -30,6 +32,8 @@ import { ResearchItemDetailsComponent } from './research-item-details/research-i
     OurTeamComponent,
     HomeComponent,
     ResearchesComponent,
+    ContactUsComponent,
+
  
 
     
@@ -37,7 +41,7 @@ import { ResearchItemDetailsComponent } from './research-item-details/research-i
   ],
 
   imports: [
-    BrowserModule,   ResearchItemDetailsComponent,
+    BrowserModule,   ResearchItemDetailsComponent,    LoginComponent,
     AppRoutingModule,NgbModule,NgbAlert, CategoryCarouselComponent,ResearchesDataComponent,
     NavbarCompComponent,CarouselCompComponent,NgbPaginationModule, NgbAlertModule,BrowserAnimationsModule,NgbCarouselModule, NgIf, NgFor
   ],

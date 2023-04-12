@@ -43,6 +43,12 @@ function getItemDetails(itemId: number) {
 function matches(country: Country, term: string, pipe: PipeTransform) {
 	return (
 		country.name.toLowerCase().includes(term.toLowerCase()) ||
+		country.title.toLowerCase().includes(term.toLowerCase()) ||
+		country.short_desc.toLowerCase().includes(term.toLowerCase()) ||
+		country.big_desc.toLowerCase().includes(term.toLowerCase()) ||
+		country.category.toLowerCase().includes(term.toLowerCase()) ||
+		country.status.toLowerCase().includes(term.toLowerCase()) ||
+		country.owner.toLowerCase().includes(term.toLowerCase()) ||
 		pipe.transform(country.area).includes(term) ||
 		pipe.transform(country.population).includes(term)
 	);
@@ -88,7 +94,7 @@ export class CountryService {
 	// function getCountry(itemId: number) {
 	// 	return COUNTRIES.find(item => item.id === itemId);
 	// }
-	
+
 	get countries$() {
 		return this._countries$.asObservable();
 	}

@@ -36,21 +36,21 @@
 					<a class="nav-link" routerLink="/researches" (click)="isMenuCollapsed = true">Researches</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" routerLink=""  (click)="isMenuCollapsed = true">Projects Ideas</a>
+					<a class="nav-link" routerLink="/researches"  (click)="isMenuCollapsed = true">Projects Ideas</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" routerLink=""  (click)="isMenuCollapsed = true">Our Blog</a>
 				</li>
                 <li class="nav-item">
-					<a class="nav-link" routerLink=""  (click)="isMenuCollapsed = true">Contact Us</a>
+					<a class="nav-link" routerLink="/contact-us"  (click)="isMenuCollapsed = true">Contact Us</a>
 				</li>
 			</ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                  <button type="button" class="btn btn-primary me-2">Sign In</button>
+                  <button type="button" routerLink="/login" class="btn btn-primary me-2">Sign In</button>
                 </li>
                 <li class="nav-item">
-                  <button type="button" class="btn btn-outline-primary me-2">Sign Up</button>
+                  <button type="button" routerLink="/login" class="btn btn-outline-primary me-2">Sign Up</button>
                 </li>
                 <li class="nav-item">
                   <button  class="btn btn-lg btn-outline-primary mb-2 me-2" (click)="openEnd(content)"><i class="bi bi-gear"></i></button>
